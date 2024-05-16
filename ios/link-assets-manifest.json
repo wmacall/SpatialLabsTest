@@ -1,0 +1,29 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/OatmealPro-Bold.otf",
+      "sha1": "dde76f7e05b707d58acdefdf3713be87ccf9cc15"
+    },
+    {
+      "path": "src/assets/fonts/OatmealPro-ExtraLight.otf",
+      "sha1": "cd4fe4b4be2c9f094758ef9dea4d6cf8123e3098"
+    },
+    {
+      "path": "src/assets/fonts/OatmealPro-Light.otf",
+      "sha1": "c3d0c3e481abb2c6047a82b087ad0e2778992b15"
+    },
+    {
+      "path": "src/assets/fonts/OatmealPro-Medium.otf",
+      "sha1": "8345ea6a04d1d982d520849feaa99c9da8348860"
+    },
+    {
+      "path": "src/assets/fonts/OatmealPro-Regular.otf",
+      "sha1": "cb8a1d57b6f69630aa5645e75a4fc66aad7c318d"
+    },
+    {
+      "path": "src/assets/fonts/OatmealPro-Semibold.otf",
+      "sha1": "453e45a54333ad48a0a8415b7d2e9d4fb47aee52"
+    }
+  ]
+}

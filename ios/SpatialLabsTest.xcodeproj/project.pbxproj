@@ -15,6 +15,12 @@
 		4B393A06E9DA44AC555A27DD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C6FB9E28C1FABDC95A5204F5 /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-SpatialLabsTest-SpatialLabsTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpatialLabsTest-SpatialLabsTestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		185C6C82C19A401FA419842D /* OatmealPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */; };
+		7C14CD955B1040C6A27893BD /* OatmealPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */; };
+		E4E13C149E0249A38B52CEFE /* OatmealPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */; };
+		31F762445A164DBB9B13F372 /* OatmealPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */; };
+		870BD633D3CA49EF91061A61 /* OatmealPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */; };
+		A014A17E0A7949A78C6463EA /* OatmealPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig"; path = "Target Support Files/Pods-SpatialLabsTest-SpatialLabsTestTests/Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6FB9E28C1FABDC95A5204F5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = SpatialLabsTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */ = {isa = PBXFileReference; name = "OatmealPro-Bold.otf"; path = "../src/assets/fonts/OatmealPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */ = {isa = PBXFileReference; name = "OatmealPro-ExtraLight.otf"; path = "../src/assets/fonts/OatmealPro-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */ = {isa = PBXFileReference; name = "OatmealPro-Light.otf"; path = "../src/assets/fonts/OatmealPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */ = {isa = PBXFileReference; name = "OatmealPro-Medium.otf"; path = "../src/assets/fonts/OatmealPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */ = {isa = PBXFileReference; name = "OatmealPro-Regular.otf"; path = "../src/assets/fonts/OatmealPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */ = {isa = PBXFileReference; name = "OatmealPro-Semibold.otf"; path = "../src/assets/fonts/OatmealPro-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F9BF93690CFB4DFBA661DEDA /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +165,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F9BF93690CFB4DFBA661DEDA /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */,
+				2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */,
+				F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */,
+				A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */,
+				ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */,
+				041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +276,12 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				4B393A06E9DA44AC555A27DD /* PrivacyInfo.xcprivacy in Resources */,
+				185C6C82C19A401FA419842D /* OatmealPro-Bold.otf in Resources */,
+				7C14CD955B1040C6A27893BD /* OatmealPro-ExtraLight.otf in Resources */,
+				E4E13C149E0249A38B52CEFE /* OatmealPro-Light.otf in Resources */,
+				31F762445A164DBB9B13F372 /* OatmealPro-Medium.otf in Resources */,
+				870BD633D3CA49EF91061A61 /* OatmealPro-Regular.otf in Resources */,
+				A014A17E0A7949A78C6463EA /* OatmealPro-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
