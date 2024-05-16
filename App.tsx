@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, View} from 'react-native';
 import {Icon, Typography} from './src/components';
 import {COLORS} from './src/constants';
+import {Input} from './src/components/Input/Input';
 
 const App = () => {
+  const [value, setValue] = useState('');
   return (
     <View style={{backgroundColor: COLORS.MONOCHROME_600, flex: 1}}>
       <SafeAreaView />
@@ -22,6 +24,16 @@ const App = () => {
       <Icon name="LogoutIcon" />
       <Icon name="UploadIcon" />
       <Icon name="UserIcon" />
+      <Input value={value} onChangeText={setValue} showLimit />
+      <Input value={value} onChangeText={setValue} secureTextEntry />
+      <Input value={value} onChangeText={setValue} isValid />
+      <Input value={value} onChangeText={setValue} multiline showLimit />
+      <Input
+        value={value}
+        onChangeText={setValue}
+        secureTextEntry
+        keyboardType="email-address"
+      />
     </View>
   );
 };
