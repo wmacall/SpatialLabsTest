@@ -18,9 +18,14 @@ const profileSlice = createSlice({
       state.email = action.payload.email;
       state.photo = action.payload.photo;
     },
+    onUpdateProfile: (state, action: PayloadAction<Partial<ProfileState>>) => {
+      state.name = action.payload.name ?? '';
+      state.bio = action.payload.bio ?? '';
+      state.photo = action.payload.photo ?? '';
+    },
     resetProfile: () => initialState,
   },
 });
 
-export const {setProfile, resetProfile} = profileSlice.actions;
+export const {setProfile, onUpdateProfile, resetProfile} = profileSlice.actions;
 export default profileSlice.reducer;

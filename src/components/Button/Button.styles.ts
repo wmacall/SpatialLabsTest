@@ -27,6 +27,8 @@ export default StyleSheet.create({
     width: theme.scaleWidth(27),
     height: theme.scaleHeight(27),
     borderRadius: theme.scaleWidth(13.5),
+    borderWidth: 1,
+    borderColor: COLORS.DARK_SECONDARY,
   },
   rounded_medium: {
     width: theme.scaleWidth(40),

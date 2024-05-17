@@ -3,7 +3,7 @@ import {SectionList, View} from 'react-native';
 import {SOCIAL_MEDIA} from '../../../constants';
 import {SectionHeader} from '../../../components/SectionHeader';
 import {SectionItem} from '../../../components/SectionItem';
-import {Button, Typography} from '../../../components';
+import {Button, CreateProfile, Typography} from '../../../components';
 import {translate} from '../../../i18n';
 
 export const OnBoardingScreen = () => {
@@ -22,6 +22,7 @@ export const OnBoardingScreen = () => {
     });
   };
 
+  return <CreateProfile />;
   return (
     <View>
       <Button
