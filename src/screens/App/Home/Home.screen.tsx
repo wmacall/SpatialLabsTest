@@ -1,25 +1,23 @@
 import React from 'react';
-import {FlatList, TouchableOpacity, View} from 'react-native';
-import {Typography} from '../../../components';
+import {FlatList, View} from 'react-native';
+import {AccountCard} from '../../../components';
 import {useSelector} from 'react-redux';
 import {getSocialMedia} from '../../../store';
-import {useNavigation} from '@react-navigation/native';
-import {AppStackRoutes} from '../../../routes';
+import styles from './Home.screen.styles';
 
 export const HomeScreen = () => {
   const socialMedia = useSelector(getSocialMedia);
-  const {navigate} = useNavigation();
   return (
-    <View>
-      <Typography>Home screen</Typography>
+    <View style={styles.container}>
       <FlatList
-        data={socialMedia}
+        numColumns={2}
+        contentContainerStyle={styles.contentContainerStyle}
+        data={[...socialMedia, ...socialMedia, ...socialMedia, ...socialMedia]}
         keyExtractor={(item, index) => `${item.name}-${index}`}
-        renderItem={({item}) => <Typography>{item.name}</Typography>}
+        renderItem={({item, index}) => (
+          <AccountCard isOdd={index % 2 === 0} {...item} />
+        )}
       />
-      <TouchableOpacity onPress={() => navigate(AppStackRoutes.PROFILE)}>
-        <Typography>Go to Profile</Typography>
-      </TouchableOpacity>
     </View>
   );
 };

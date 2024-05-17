@@ -6,3 +6,4 @@ export * from './CreateProfile';
 export * from './ImagePicker';
 export * from './AccountsSelection';
 export * from './AvatarProfile';
+export * from './AccountCard';
