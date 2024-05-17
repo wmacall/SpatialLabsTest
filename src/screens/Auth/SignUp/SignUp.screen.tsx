@@ -4,6 +4,8 @@ import {Button, Input, Typography} from '../../../components';
 import {translate} from '../../../i18n';
 import DotImage from '../../../assets/img/dot.png';
 import styles from './SignUp.screen.styles';
+import {useAppDispatch} from '../../../hooks';
+import {setProfile} from '../../../store';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -13,12 +15,23 @@ export const SignUpScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleNextStep = () => setStep(step + 1);
   const handleBackStep = () => setStep(step - 1);
   const handleEmailChange = (text: string) => {
     setEmail(text);
     setIsValidEmail(emailRegex.test(text));
+  };
+  const handleCreateAccount = () => {
+    dispatch(
+      setProfile({
+        bio: email,
+        email,
+        name: '',
+        photo: '',
+      }),
+    );
   };
 
   const isValid = password.length >= 8 && isValidEmail;
@@ -100,7 +113,7 @@ export const SignUpScreen = () => {
             isDisabled={!isValid}
             style={styles.containerCreateAccount}
             text={translate('create_account')}
-            onPress={handleNextStep}
+            onPress={handleCreateAccount}
             textVariant="paragraph"
           />
         </>
