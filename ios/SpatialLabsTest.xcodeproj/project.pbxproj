@@ -12,15 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		185C6C82C19A401FA419842D /* OatmealPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */; };
+		31F762445A164DBB9B13F372 /* OatmealPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */; };
 		4B393A06E9DA44AC555A27DD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C6FB9E28C1FABDC95A5204F5 /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-SpatialLabsTest-SpatialLabsTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpatialLabsTest-SpatialLabsTestTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		185C6C82C19A401FA419842D /* OatmealPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */; };
 		7C14CD955B1040C6A27893BD /* OatmealPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */; };
-		E4E13C149E0249A38B52CEFE /* OatmealPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */; };
-		31F762445A164DBB9B13F372 /* OatmealPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		870BD633D3CA49EF91061A61 /* OatmealPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */; };
 		A014A17E0A7949A78C6463EA /* OatmealPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */; };
+		E4E13C149E0249A38B52CEFE /* OatmealPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 		00E356EE1AD99517003FC87E /* SpatialLabsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatialLabsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SpatialLabsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialLabsTestTests.m; sourceTree = "<group>"; };
+		041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Semibold.otf"; path = "../src/assets/fonts/OatmealPro-Semibold.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SpatialLabsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialLabsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SpatialLabsTest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = SpatialLabsTest/AppDelegate.mm; sourceTree = "<group>"; };
@@ -45,20 +46,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SpatialLabsTest/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SpatialLabsTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpatialLabsTest-SpatialLabsTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpatialLabsTest-SpatialLabsTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-ExtraLight.otf"; path = "../src/assets/fonts/OatmealPro-ExtraLight.otf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SpatialLabsTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpatialLabsTest.debug.xcconfig"; path = "Target Support Files/Pods-SpatialLabsTest/Pods-SpatialLabsTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SpatialLabsTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpatialLabsTest.release.xcconfig"; path = "Target Support Files/Pods-SpatialLabsTest/Pods-SpatialLabsTest.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SpatialLabsTest-SpatialLabsTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpatialLabsTest-SpatialLabsTestTests.debug.xcconfig"; path = "Target Support Files/Pods-SpatialLabsTest-SpatialLabsTestTests/Pods-SpatialLabsTest-SpatialLabsTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SpatialLabsTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpatialLabsTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SpatialLabsTest/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig"; path = "Target Support Files/Pods-SpatialLabsTest-SpatialLabsTestTests/Pods-SpatialLabsTest-SpatialLabsTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Medium.otf"; path = "../src/assets/fonts/OatmealPro-Medium.otf"; sourceTree = "<group>"; };
 		C6FB9E28C1FABDC95A5204F5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = SpatialLabsTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */ = {isa = PBXFileReference; name = "OatmealPro-Bold.otf"; path = "../src/assets/fonts/OatmealPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */ = {isa = PBXFileReference; name = "OatmealPro-ExtraLight.otf"; path = "../src/assets/fonts/OatmealPro-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */ = {isa = PBXFileReference; name = "OatmealPro-Light.otf"; path = "../src/assets/fonts/OatmealPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A890F19AE3CE4F01876F68DF /* OatmealPro-Medium.otf */ = {isa = PBXFileReference; name = "OatmealPro-Medium.otf"; path = "../src/assets/fonts/OatmealPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */ = {isa = PBXFileReference; name = "OatmealPro-Regular.otf"; path = "../src/assets/fonts/OatmealPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */ = {isa = PBXFileReference; name = "OatmealPro-Semibold.otf"; path = "../src/assets/fonts/OatmealPro-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ED9E798DF1274601BEC45C5B /* OatmealPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Regular.otf"; path = "../src/assets/fonts/OatmealPro-Regular.otf"; sourceTree = "<group>"; };
+		F842A248596D4C4FA25A489F /* OatmealPro-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Light.otf"; path = "../src/assets/fonts/OatmealPro-Light.otf"; sourceTree = "<group>"; };
+		FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Bold.otf"; path = "../src/assets/fonts/OatmealPro-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 			sourceTree = "<group>";
 		};
 		F9BF93690CFB4DFBA661DEDA /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				FB5C17B8E79448D7A0D8F50C /* OatmealPro-Bold.otf */,
 				2CC0611BD50944DB8C7AAA5B /* OatmealPro-ExtraLight.otf */,
@@ -177,8 +177,8 @@
 				041416B8CB6B457386CC5F6F /* OatmealPro-Semibold.otf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -631,7 +631,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -703,7 +706,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
