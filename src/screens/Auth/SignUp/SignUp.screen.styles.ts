@@ -34,4 +34,12 @@ export default StyleSheet.create({
   inputSignUp: {
     marginTop: theme.scaleHeight(16),
   },
+  containerWelcome: {
+    position: 'absolute',
+    width: '100%',
+    alignSelf: 'center',
+  },
+  welcomeImageDot: {
+    marginTop: theme.scaleHeight(198),
+  },
 });

@@ -6,6 +6,7 @@ const initialState: ProfileState = {
   bio: '',
   email: '',
   photo: '',
+  username: '',
 };
 
 const profileSlice = createSlice({
@@ -17,6 +18,7 @@ const profileSlice = createSlice({
       state.bio = action.payload.bio;
       state.email = action.payload.email;
       state.photo = action.payload.photo;
+      state.username = action.payload.username;
     },
     onUpdateProfile: (state, action: PayloadAction<Partial<ProfileState>>) => {
       state.name = action.payload.name ?? '';

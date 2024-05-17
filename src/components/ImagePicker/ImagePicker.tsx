@@ -29,7 +29,10 @@ export const ImagePicker = ({
 }: ImagePickerProps) => {
   const handleTakePhoto = async () => {
     const result = await launchCamera(options);
-    console.log(result);
+    if (result.assets && result.assets[0]) {
+      setPhoto(result.assets[0].uri);
+      onClose();
+    }
   };
   const handleChooseFromLibrary = async () => {
     const result = await launchImageLibrary(options);

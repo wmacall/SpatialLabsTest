@@ -6,6 +6,8 @@ import DotImage from '../../../assets/img/dot.png';
 import styles from './SignUp.screen.styles';
 import {useAppDispatch} from '../../../hooks';
 import {setProfile} from '../../../store';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {theme} from '../../../utils';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -16,6 +18,7 @@ export const SignUpScreen = () => {
   const [password, setPassword] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(false);
   const dispatch = useAppDispatch();
+  const {bottom} = useSafeAreaInsets();
 
   const handleNextStep = () => setStep(step + 1);
   const handleBackStep = () => setStep(step - 1);
@@ -30,6 +33,7 @@ export const SignUpScreen = () => {
         email,
         name: '',
         photo: '',
+        username: echo,
       }),
     );
   };
@@ -40,15 +44,26 @@ export const SignUpScreen = () => {
     <View style={styles.container}>
       {step === 0 ? (
         <>
-          <Image source={DotImage} style={styles.imageDot} />
-          <Typography>{translate('welcome')}</Typography>
-          <Typography variant="h5">{translate('congratulations')}</Typography>
-          <Button
-            style={styles.containerGetStarted}
-            text={translate('get_started')}
-            buttonColor="BLUE"
-            onPress={handleNextStep}
+          <Image
+            source={DotImage}
+            style={[styles.imageDot, styles.welcomeImageDot]}
           />
+          <View
+            style={[
+              styles.containerWelcome,
+              {
+                bottom: bottom + theme.scaleHeight(80),
+              },
+            ]}>
+            <Typography>{translate('welcome')}</Typography>
+            <Typography variant="h5">{translate('congratulations')}</Typography>
+            <Button
+              style={styles.containerGetStarted}
+              text={translate('get_started')}
+              buttonColor="BLUE"
+              onPress={handleNextStep}
+            />
+          </View>
         </>
       ) : null}
       {step === 1 ? (
@@ -73,12 +88,20 @@ export const SignUpScreen = () => {
             maxLength={20}
             isValid={echo.length >= 3}
           />
-          <Button
-            isDisabled={echo.length < 3}
-            style={styles.containerGetStarted}
-            text={translate('claim')}
-            onPress={handleNextStep}
-          />
+          <View
+            style={[
+              styles.containerWelcome,
+              {
+                bottom: bottom + theme.scaleHeight(80),
+              },
+            ]}>
+            <Button
+              isDisabled={echo.length < 3}
+              style={styles.containerGetStarted}
+              text={translate('claim')}
+              onPress={handleNextStep}
+            />
+          </View>
         </>
       ) : null}
       {step === 2 ? (
