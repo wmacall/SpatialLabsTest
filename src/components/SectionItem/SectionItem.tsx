@@ -9,7 +9,7 @@ import {Typography} from '../Typography';
 import {Input} from '../Input';
 import styles from './SectionItem.styles';
 import {translate} from '../../i18n';
-import {Icon} from '../Icon';
+import {Icon, IconName} from '../Icon';
 import {
   SocialMedia,
   getSocialMedia,
@@ -50,7 +50,7 @@ export const SectionItem = ({name, icon}: SectionItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.containerImage}>
-        <Typography variant="h6">{icon}</Typography>
+        <Icon name={icon as IconName} />
       </View>
       <View style={styles.containerSocial}>
         <View style={styles.containerInput}>

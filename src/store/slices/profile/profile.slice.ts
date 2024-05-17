@@ -45,6 +45,9 @@ const profileSlice = createSlice({
         socialMedia => socialMedia.name !== action.payload,
       );
     },
+    onFinishOnboarding: state => {
+      state.isOnboardingComplete = true;
+    },
     resetProfile: () => initialState,
   },
 });
@@ -54,6 +57,7 @@ export const {
   onUpdateProfile,
   onAddSocialMedia,
   onRemoveSocialMedia,
+  onFinishOnboarding,
   resetProfile,
 } = profileSlice.actions;
 export default profileSlice.reducer;

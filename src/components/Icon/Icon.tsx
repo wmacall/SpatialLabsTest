@@ -20,6 +20,17 @@ const IconNames = {
   UserIcon: Icons.UserIcon,
   PhotoIcon: Icons.PhotoIcon,
   GalleryIcon: Icons.GalleryIcon,
+  FacebookIcon: Icons.FacebookIcon,
+  InstagramIcon: Icons.InstagramIcon,
+  LinkedinIcon: Icons.LinkedinIcon,
+  RedditIcon: Icons.RedditIcon,
+  SnapchatIcon: Icons.SnapchatIcon,
+  TelegramIcon: Icons.TelegramIcon,
+  ThreadsIcon: Icons.ThreadsIcon,
+  TiktokIcon: Icons.TiktokIcon,
+  TwitchIcon: Icons.TwitchIcon,
+  XIcon: Icons.XIcon,
+  YoutubeIcon: Icons.YoutubeIcon,
 };
 
 export const Icon = ({name, ...rest}: IconProps) => {

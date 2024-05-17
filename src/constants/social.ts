@@ -1,4 +1,16 @@
-export const SOCIAL_MEDIA = [
+import {IconName} from '../components';
+
+export interface SocialMediaData {
+  name: string;
+  icon: IconName;
+}
+
+export interface SocialNetwork {
+  title: string;
+  data: SocialMediaData[];
+}
+
+export const SOCIAL_MEDIA: SocialNetwork[] = [
   {
     title: 'Social Media',
     data: [
@@ -8,15 +20,15 @@ export const SOCIAL_MEDIA = [
       },
       {
         name: 'TikTok',
-        icon: 'TikTokIcon',
+        icon: 'TiktokIcon',
       },
       {
         name: 'Reedit',
-        icon: 'ReeditIcon',
+        icon: 'RedditIcon',
       },
       {
         name: 'LinkedIn',
-        icon: 'LinkedInIcon',
+        icon: 'LinkedinIcon',
       },
       {
         name: 'Snapchat',
@@ -41,7 +53,7 @@ export const SOCIAL_MEDIA = [
     data: [
       {
         name: 'YouTube',
-        icon: 'YouTubeIcon',
+        icon: 'YoutubeIcon',
       },
       {
         name: 'Twitch',

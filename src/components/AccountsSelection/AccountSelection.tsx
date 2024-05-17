@@ -8,7 +8,8 @@ import {SectionHeader} from '../SectionHeader';
 import {translate} from '../../i18n';
 import styles from './AccountSelection.styles';
 import {useSelector} from 'react-redux';
-import {getSocialMedia} from '../../store';
+import {getSocialMedia, onFinishOnboarding} from '../../store';
+import {useAppDispatch} from '../../hooks';
 
 interface AccountSelectionProps {
   handleBackStep: () => void;
@@ -19,6 +20,7 @@ export const AccountSelection = ({handleBackStep}: AccountSelectionProps) => {
     new Set(SOCIAL_MEDIA.map(({title}) => title)),
   );
   const socialMedia = useSelector(getSocialMedia);
+  const dispatch = useAppDispatch();
 
   const handleToggle = (title: string) => {
     setExpandedSections(prev => {
@@ -30,6 +32,9 @@ export const AccountSelection = ({handleBackStep}: AccountSelectionProps) => {
       }
       return next;
     });
+  };
+  const handleFinishAddingAccounts = () => {
+    dispatch(onFinishOnboarding());
   };
 
   return (
@@ -60,6 +65,7 @@ export const AccountSelection = ({handleBackStep}: AccountSelectionProps) => {
       />
       <View style={styles.containerFinish}>
         <Button
+          onPress={handleFinishAddingAccounts}
           isDisabled={socialMedia.length === 0}
           text={translate('next')}
         />
