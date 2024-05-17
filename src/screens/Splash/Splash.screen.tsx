@@ -1,5 +1,5 @@
 import React from 'react';
-import {AuthRouter, OnBoardingRouter} from '../../routes';
+import {AppRouter, AuthRouter, OnBoardingRouter} from '../../routes';
 import {SafeAreaView} from 'react-native';
 import {useSelector} from 'react-redux';
 import {getProfileSelector} from '../../store';
@@ -13,7 +13,7 @@ export const SplashScreen = () => {
       <SafeAreaView />
       {!isOnboardingComplete && !isSignUpComplete ? <AuthRouter /> : null}
       {isSignUpComplete && !isOnboardingComplete ? <OnBoardingRouter /> : null}
-      {isSignUpComplete && isOnboardingComplete ? null : null}
+      {isSignUpComplete && isOnboardingComplete ? <AppRouter /> : null}
     </>
   );
 };
