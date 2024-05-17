@@ -31,6 +31,21 @@ const IconNames = {
   TwitchIcon: Icons.TwitchIcon,
   XIcon: Icons.XIcon,
   YoutubeIcon: Icons.YoutubeIcon,
+  AppleMusicIcon: Icons.AppleMusicIcon,
+  BehanceIcon: Icons.BehanceIcon,
+  DribbbleIcon: Icons.DribbbleIcon,
+  EtsyIcon: Icons.EtsyIcon,
+  FigmaIcon: Icons.FigmaIcon,
+  GitHubIcon: Icons.GitHubIcon,
+  LineIcon: Icons.LineIcon,
+  MediumIcon: Icons.MediumIcon,
+  PinterestIcon: Icons.PinterestIcon,
+  ShopifyIcon: Icons.ShopifyIcon,
+  SoundCloudIcon: Icons.SoundCloudIcon,
+  SpotifyIcon: Icons.SpotifyIcon,
+  SubstackIcon: Icons.SubstackIcon,
+  TidalIcon: Icons.TidalIcon,
+  WhatsAppIcon: Icons.WhatsAppIcon,
 };
 
 export const Icon = ({name, ...rest}: IconProps) => {
