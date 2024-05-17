@@ -1,7 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {AuthStackRouter, AuthStackRoutes} from './Auth.routes.types';
-import {SignUpScreen} from '../../screens';
+import {OnBoardingScreen, SignUpScreen} from '../../screens';
 
 const AuthNavigator = createNativeStackNavigator<AuthStackRouter>();
 export const AuthRouter = () => (
@@ -11,7 +11,7 @@ export const AuthRouter = () => (
     }}>
     <AuthNavigator.Screen
       name={AuthStackRoutes.SIGN_UP}
-      component={SignUpScreen}
+      component={OnBoardingScreen}
     />
   </AuthNavigator.Navigator>
 );

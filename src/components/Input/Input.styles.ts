@@ -10,6 +10,7 @@ export default StyleSheet.create({
     paddingLeft: theme.scaleWidth(16),
     color: COLORS.BLACK,
     borderRadius: theme.scaleWidth(8),
+    fontFamily: 'Oatmeal Pro Regular',
   },
   containerValid: {
     position: 'absolute',

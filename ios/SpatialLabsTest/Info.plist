@@ -32,7 +32,14 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select image/video from photos	</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Capture Imagesla
+  </string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Capture Video</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
