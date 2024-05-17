@@ -3,6 +3,7 @@ import {SafeAreaView, View} from 'react-native';
 import {Icon, Typography} from './src/components';
 import {COLORS} from './src/constants';
 import {Input} from './src/components/Input/Input';
+import {Button} from './src/components/Button';
 
 const App = () => {
   const [value, setValue] = useState('');
@@ -25,14 +26,45 @@ const App = () => {
       <Icon name="UploadIcon" />
       <Icon name="UserIcon" />
       <Input value={value} onChangeText={setValue} showLimit />
-      <Input value={value} onChangeText={setValue} secureTextEntry />
-      <Input value={value} onChangeText={setValue} isValid />
-      <Input value={value} onChangeText={setValue} multiline showLimit />
       <Input
         value={value}
         onChangeText={setValue}
         secureTextEntry
         keyboardType="email-address"
+      />
+      <Button
+        variant="primary"
+        text="Get Started"
+        buttonColor="BLUE"
+        onPress={() => console.log('??')}
+      />
+      <Button
+        variant="primary"
+        text="Get Started"
+        onPress={() => console.log('??')}
+      />
+      <Button
+        variant="primary"
+        text="Get Started"
+        isDisabled
+        onPress={() => console.log('??')}
+      />
+      <Button
+        variant="secondary"
+        text="Save"
+        onPress={() => console.log('??')}
+      />
+      <Button
+        variant="rounded"
+        icon="AddIcon"
+        buttonColor="GREEN_SECONDARY"
+        onPress={() => console.log('??')}
+      />
+      <Button
+        variant="rounded_small"
+        icon="EditIcon"
+        buttonColor="DARK_SECONDARY"
+        onPress={() => console.log('??')}
       />
     </View>
   );

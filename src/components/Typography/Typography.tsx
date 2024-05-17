@@ -1,13 +1,8 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {StyleProp, Text, TextStyle} from 'react-native';
+import {COLORS} from '../../constants';
+import {TypographyProps, TypographyVariant} from './Typography.types';
 import styles from './Typography.styles';
-
-type TypographyVariant = 'h3' | 'h4' | 'h5' | 'h6' | 'paragraph' | 'small';
-
-interface TypographyProps {
-  children: ReactNode;
-  variant?: TypographyVariant;
-}
 
 const typographyVariants: Record<TypographyVariant, StyleProp<TextStyle>> = {
   h3: styles.h3,
@@ -18,9 +13,18 @@ const typographyVariants: Record<TypographyVariant, StyleProp<TextStyle>> = {
   small: styles.small,
 };
 
-export const Typography = ({children, variant = 'h3'}: TypographyProps) => {
+export const Typography = ({
+  children,
+  variant = 'h3',
+  textColor = 'BLACK',
+}: TypographyProps) => {
+  const typographyColor: TextStyle = {
+    color: COLORS[textColor],
+  };
+
   return (
-    <Text style={[styles.baseStyle, typographyVariants[variant]]}>
+    <Text
+      style={[styles.baseStyle, typographyVariants[variant], typographyColor]}>
       {children}
     </Text>
   );

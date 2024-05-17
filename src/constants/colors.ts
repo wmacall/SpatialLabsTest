@@ -7,4 +7,7 @@ export const COLORS = {
   DARK_SECONDARY: '#E6E6E6',
   GREEN_SECONDARY: '#12CC50',
   RED: '#FF3344',
+  BLACK_50: 'rgba(21, 21, 21, 0.5)',
+  WHITE: '#FFFFFF',
+  MONOCHROME_400: '#8B8B8B',
 };
