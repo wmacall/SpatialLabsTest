@@ -11,6 +11,7 @@ const typographyVariants: Record<ButtonVariant, StyleProp<ViewStyle>> = {
   secondary: styles.secondary,
   rounded: styles.rounded,
   rounded_small: styles.rounded_small,
+  rounded_medium: styles.rounded_medium,
 };
 
 export const Button = ({
@@ -20,6 +21,8 @@ export const Button = ({
   variant = 'primary',
   icon,
   buttonColor = 'BLACK',
+  style,
+  textVariant = 'h6',
 }: ButtonProps) => {
   const disabledStyle = isDisabled ? styles.containerDisabled : {};
   const textColor = isDisabled ? 'MONOCHROME_400' : 'WHITE';
@@ -32,11 +35,12 @@ export const Button = ({
         styles.container,
         typographyVariants[variant],
         buttonColorStyle,
+        style,
         disabledStyle,
       ]}
       onPress={onPress}>
       {text ? (
-        <Typography textColor={textColor} variant="h6">
+        <Typography textColor={textColor} variant={textVariant}>
           {text}
         </Typography>
       ) : null}

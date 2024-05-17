@@ -1,7 +1,7 @@
 import {Dimensions, PixelRatio, Platform} from 'react-native';
 
-const BASE_WIDTH = 375;
-const BASE_HEIGHT = 812;
+const BASE_WIDTH = 393;
+const BASE_HEIGHT = 852;
 const dimensionType = Platform.OS === 'ios' ? 'screen' : 'window';
 const screen = Dimensions.get(dimensionType);
 

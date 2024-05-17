@@ -5,7 +5,7 @@ import {COLORS} from '../../constants';
 export default StyleSheet.create({
   container: {
     width: '100%',
-    borderRadius: theme.scaleWidth(8),
+    borderRadius: theme.scaleWidth(128),
     height: theme.scaleHeight(48),
     backgroundColor: COLORS.BLACK,
     justifyContent: 'center',
@@ -27,5 +27,11 @@ export default StyleSheet.create({
     width: theme.scaleWidth(27),
     height: theme.scaleHeight(27),
     borderRadius: theme.scaleWidth(13.5),
+  },
+  rounded_medium: {
+    width: theme.scaleWidth(40),
+    height: theme.scaleHeight(40),
+    borderRadius: theme.scaleWidth(20),
+    backgroundColor: COLORS.DARK_SECONDARY,
   },
 });

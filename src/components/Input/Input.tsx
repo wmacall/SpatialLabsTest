@@ -3,6 +3,7 @@ import {TextInput, TextInputProps, View} from 'react-native';
 import styles from './Input.styles';
 import {Typography} from '../Typography';
 import {Icon} from '../Icon';
+import {COLORS} from '../../constants';
 
 interface InputProps extends TextInputProps {
   showLimit?: boolean;
@@ -19,11 +20,12 @@ export const Input = ({
   multiline = false,
   keyboardType = 'default',
   isValid = false,
+  style,
 }: InputProps) => {
   return (
     <View>
       <TextInput
-        style={styles.container}
+        style={[styles.container, style]}
         value={value}
         onChangeText={onChangeText}
         maxLength={maxLength}
@@ -31,6 +33,10 @@ export const Input = ({
         placeholder={placeholder}
         multiline={multiline}
         keyboardType={keyboardType}
+        placeholderTextColor={COLORS.MONOCHROME_400}
+        autoCapitalize="none"
+        autoComplete="off"
+        autoCorrect={false}
       />
       {isValid ? (
         <View style={styles.containerValid}>

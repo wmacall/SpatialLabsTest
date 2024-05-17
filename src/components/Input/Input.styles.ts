@@ -9,12 +9,13 @@ export default StyleSheet.create({
     backgroundColor: COLORS.DARK_SECONDARY,
     paddingLeft: theme.scaleWidth(16),
     color: COLORS.BLACK,
+    borderRadius: theme.scaleWidth(8),
   },
   containerValid: {
     position: 'absolute',
-    height: '100%',
     justifyContent: 'center',
     right: theme.scaleWidth(16),
+    top: theme.scaleHeight(16),
   },
   limitContainer: {
     alignItems: 'flex-end',

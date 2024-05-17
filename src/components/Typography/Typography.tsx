@@ -17,6 +17,7 @@ export const Typography = ({
   children,
   variant = 'h3',
   textColor = 'BLACK',
+  style,
 }: TypographyProps) => {
   const typographyColor: TextStyle = {
     color: COLORS[textColor],
@@ -24,7 +25,12 @@ export const Typography = ({
 
   return (
     <Text
-      style={[styles.baseStyle, typographyVariants[variant], typographyColor]}>
+      style={[
+        styles.baseStyle,
+        typographyVariants[variant],
+        typographyColor,
+        style,
+      ]}>
       {children}
     </Text>
   );
