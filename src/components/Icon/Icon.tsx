@@ -18,6 +18,8 @@ const IconNames = {
   LogoutIcon: Icons.LogoutIcon,
   UploadIcon: Icons.UploadIcon,
   UserIcon: Icons.UserIcon,
+  PhotoIcon: Icons.PhotoIcon,
+  GalleryIcon: Icons.GalleryIcon,
 };
 
 export const Icon = ({name, ...rest}: IconProps) => {

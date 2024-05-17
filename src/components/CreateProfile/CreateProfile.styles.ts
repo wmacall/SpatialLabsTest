@@ -25,6 +25,11 @@ export default StyleSheet.create({
     marginTop: theme.scaleHeight(60),
     marginBottom: theme.scaleHeight(32),
   },
+  userImage: {
+    width: theme.scaleHeight(100),
+    height: theme.scaleHeight(100),
+    borderRadius: theme.scaleHeight(50),
+  },
   editIcon: {
     position: 'absolute',
     bottom: 0,

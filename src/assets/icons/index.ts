@@ -7,3 +7,5 @@ export * from './EditIcon';
 export * from './LogoutIcon';
 export * from './UploadIcon';
 export * from './UserIcon';
+export * from './PhotoIcon';
+export * from './GalleryIcon';

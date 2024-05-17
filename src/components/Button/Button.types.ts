@@ -11,7 +11,7 @@ export type ButtonVariant =
   | 'rounded_medium';
 
 export interface ButtonProps {
-  onPress: () => void;
+  onPress?: () => void;
   text?: string;
   isDisabled?: boolean;
   variant?: ButtonVariant;
