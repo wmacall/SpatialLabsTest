@@ -1,6 +1,12 @@
 import React from 'react';
 import {FlatList, Image, TouchableOpacity, View} from 'react-native';
-import {AccountCard, Button, Icon, Typography} from '../../../components';
+import {
+  AccountCard,
+  AddAccount,
+  Button,
+  Icon,
+  Typography,
+} from '../../../components';
 import {useSelector} from 'react-redux';
 import {getProfileSelector, getSocialMedia} from '../../../store';
 import DotBlack from '../../../assets/img/dot_black.png';
@@ -8,13 +14,14 @@ import styles from './Home.screen.styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {theme} from '../../../utils';
 import {useNavigation} from '@react-navigation/native';
-import {AppStackRoutes} from '../../../routes';
+import {AppStackRouter, AppStackRoutes} from '../../../routes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export const HomeScreen = () => {
   const socialMedia = useSelector(getSocialMedia);
   const {username, bio, photo} = useSelector(getProfileSelector);
   const {bottom} = useSafeAreaInsets();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<NativeStackNavigationProp<AppStackRouter>>();
 
   const handleNavigateToProfile = () => {
     navigate(AppStackRoutes.PROFILE);
@@ -22,6 +29,7 @@ export const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <AddAccount />
       <View style={styles.containerHeader}>
         <View style={styles.row}>
           <TouchableOpacity
