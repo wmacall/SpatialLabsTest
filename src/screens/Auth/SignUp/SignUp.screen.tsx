@@ -29,11 +29,13 @@ export const SignUpScreen = () => {
   const handleCreateAccount = () => {
     dispatch(
       setProfile({
-        bio: email,
+        bio: '',
         email,
         name: '',
         photo: '',
         username: echo,
+        isSignUpComplete: true,
+        isOnboardingComplete: false,
       }),
     );
   };

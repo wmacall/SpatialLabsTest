@@ -21,6 +21,7 @@ export const Input = ({
   keyboardType = 'default',
   isValid = false,
   style,
+  ...rest
 }: InputProps) => {
   return (
     <View>
@@ -37,6 +38,7 @@ export const Input = ({
         autoCapitalize="none"
         autoComplete="off"
         autoCorrect={false}
+        {...rest}
       />
       {isValid ? (
         <View style={styles.containerValid}>

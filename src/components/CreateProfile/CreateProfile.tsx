@@ -7,20 +7,28 @@ import {Input} from '../Input';
 import {Icon} from '../Icon';
 import styles from './CreateProfile.styles';
 import {useAppDispatch} from '../../hooks';
-import {onUpdateProfile} from '../../store';
-import {useSelector} from 'react-redux';
+import {getProfileSelector, onUpdateProfile} from '../../store';
 import {theme} from '../../utils';
 import {ImagePicker} from '../ImagePicker';
+import {useSelector} from 'react-redux';
 
-export const CreateProfile = () => {
-  const [name, setName] = useState('');
-  const [bio, setBio] = useState('');
-  const [photo, setPhoto] = useState<string | undefined>('');
+interface CreateProfileProps {
+  onIncrementStep: () => void;
+}
+
+export const CreateProfile = ({onIncrementStep}: CreateProfileProps) => {
+  const {
+    name: nameUser,
+    bio: bioUser,
+    photo: userPhoto,
+  } = useSelector(getProfileSelector);
+  const [name, setName] = useState(nameUser);
+  const [bio, setBio] = useState(bioUser);
+  const [photo, setPhoto] = useState<string | undefined>(userPhoto);
   const [contextMenuVisible, setContextMenuVisible] = useState(false);
   const [contextMenuPosition, setContextMenuPosition] = useState({x: 0, y: 0});
   const dispatch = useAppDispatch();
-  const a = useSelector(state => state.profile);
-  console.log(a);
+  const isValid = name.length > 3 && bio.length > 3;
 
   const handleFinishProfile = () => {
     dispatch(
@@ -30,6 +38,7 @@ export const CreateProfile = () => {
         photo,
       }),
     );
+    onIncrementStep();
   };
 
   const handlePressUpdatePhoto = () => {
@@ -83,7 +92,11 @@ export const CreateProfile = () => {
         placeholder={translate('bio')}
       />
       <View style={styles.containerNextButton}>
-        <Button text={translate('next')} onPress={handleFinishProfile} />
+        <Button
+          isDisabled={!isValid}
+          text={translate('next')}
+          onPress={handleFinishProfile}
+        />
       </View>
     </View>
   );
