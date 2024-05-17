@@ -5,9 +5,8 @@ import {useSelector} from 'react-redux';
 import {getProfileSelector} from '../../store';
 
 export const SplashScreen = () => {
-  const {isSignUpComplete, socialMedia, isOnboardingComplete} =
+  const {isSignUpComplete, isOnboardingComplete} =
     useSelector(getProfileSelector);
-  console.log({socialMedia});
   return (
     <>
       <SafeAreaView />

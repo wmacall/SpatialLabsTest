@@ -22,4 +22,8 @@ export default StyleSheet.create({
     alignItems: 'flex-end',
     marginTop: theme.scaleHeight(8),
   },
+  label: {
+    marginTop: theme.scaleHeight(16),
+    marginBottom: theme.scaleHeight(12),
+  },
 });

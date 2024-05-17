@@ -32,7 +32,7 @@ export default StyleSheet.create({
   },
   rounded_medium: {
     width: theme.scaleWidth(40),
-    height: theme.scaleHeight(40),
+    height: theme.scaleWidth(40),
     borderRadius: theme.scaleWidth(20),
     backgroundColor: COLORS.DARK_SECONDARY,
   },

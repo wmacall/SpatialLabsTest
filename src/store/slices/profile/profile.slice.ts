@@ -1,5 +1,5 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {ProfileState, SocialMedia} from './profile.slice.types';
+import {ProfilePayload, ProfileState, SocialMedia} from './profile.slice.types';
 
 const initialState: ProfileState = {
   name: '',
@@ -33,7 +33,6 @@ const profileSlice = createSlice({
       const socialMediaIndex = state.socialMedia.findIndex(
         socialMedia => socialMedia.name === action.payload.name,
       );
-      console.log({socialMediaIndex});
       if (socialMediaIndex !== -1) {
         state.socialMedia[socialMediaIndex] = action.payload;
       } else {
@@ -48,6 +47,10 @@ const profileSlice = createSlice({
     onFinishOnboarding: state => {
       state.isOnboardingComplete = true;
     },
+    onSetUserInformation: (state, action: PayloadAction<ProfilePayload>) => {
+      const {key, value} = action.payload;
+      state[key as keyof ProfileState] = value as never;
+    },
     resetProfile: () => initialState,
   },
 });
@@ -58,6 +61,7 @@ export const {
   onAddSocialMedia,
   onRemoveSocialMedia,
   onFinishOnboarding,
+  onSetUserInformation,
   resetProfile,
 } = profileSlice.actions;
 export default profileSlice.reducer;

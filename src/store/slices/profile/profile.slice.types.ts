@@ -14,3 +14,8 @@ export interface ProfileState {
   isOnboardingComplete: boolean;
   socialMedia: SocialMedia[];
 }
+
+export interface ProfilePayload {
+  key: keyof ProfileState;
+  value: string;
+}

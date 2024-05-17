@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {View} from 'react-native';
+import {useSelector} from 'react-redux';
 import {translate} from '../../i18n';
 import {Typography} from '../Typography';
 import {Button} from '../Button';
 import {Input} from '../Input';
-import {Icon} from '../Icon';
-import styles from './CreateProfile.styles';
 import {useAppDispatch} from '../../hooks';
 import {getProfileSelector, onUpdateProfile} from '../../store';
 import {theme} from '../../utils';
 import {ImagePicker} from '../ImagePicker';
-import {useSelector} from 'react-redux';
+import {AvatarProfile} from '../AvatarProfile';
+import styles from './CreateProfile.styles';
 
 interface CreateProfileProps {
   onIncrementStep: () => void;
@@ -63,21 +63,10 @@ export const CreateProfile = ({onIncrementStep}: CreateProfileProps) => {
       <Typography variant="h5" style={styles.description}>
         {translate('create_your_profile_description')}
       </Typography>
-      <TouchableOpacity
-        onPress={handlePressUpdatePhoto}
-        style={styles.containerUserImage}>
-        {photo ? (
-          <Image source={{uri: photo}} style={styles.userImage} />
-        ) : (
-          <Icon name="UserIcon" />
-        )}
-        <Button
-          icon="UploadIcon"
-          style={styles.editIcon}
-          variant="rounded_small"
-          buttonColor="PRIMARY"
-        />
-      </TouchableOpacity>
+      <AvatarProfile
+        handlePressUpdatePhoto={handlePressUpdatePhoto}
+        photo={photo}
+      />
       <Input
         value={name}
         onChangeText={setName}

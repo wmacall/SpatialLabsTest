@@ -5,3 +5,4 @@ export * from './Input';
 export * from './CreateProfile';
 export * from './ImagePicker';
 export * from './AccountsSelection';
+export * from './AvatarProfile';

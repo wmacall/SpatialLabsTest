@@ -8,6 +8,7 @@ import {COLORS} from '../../constants';
 interface InputProps extends TextInputProps {
   showLimit?: boolean;
   isValid?: boolean;
+  label?: string;
 }
 
 export const Input = ({
@@ -21,10 +22,16 @@ export const Input = ({
   keyboardType = 'default',
   isValid = false,
   style,
+  label,
   ...rest
 }: InputProps) => {
   return (
     <View>
+      {label ? (
+        <Typography style={styles.label} variant="h6">
+          {label}
+        </Typography>
+      ) : null}
       <TextInput
         style={[styles.container, style]}
         value={value}

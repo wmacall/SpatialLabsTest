@@ -48,6 +48,7 @@ export const SignUpScreen = () => {
         <>
           <Image
             source={DotImage}
+            resizeMode="contain"
             style={[styles.imageDot, styles.welcomeImageDot]}
           />
           <View
@@ -77,7 +78,11 @@ export const SignUpScreen = () => {
             buttonColor="DARK_SECONDARY"
             icon="BackArrowIcon"
           />
-          <Image source={DotImage} style={styles.imageDot} />
+          <Image
+            source={DotImage}
+            resizeMode="contain"
+            style={styles.imageDot}
+          />
           <Typography variant="h4">{translate('create_your_echo')}</Typography>
           <Typography style={styles.description} variant="h6">
             {translate('create_your_echo_description')}
@@ -115,7 +120,11 @@ export const SignUpScreen = () => {
             buttonColor="DARK_SECONDARY"
             icon="BackArrowIcon"
           />
-          <Image source={DotImage} style={styles.imageDot} />
+          <Image
+            resizeMode="contain"
+            source={DotImage}
+            style={styles.imageDot}
+          />
           <Typography variant="h4">{translate('echo_secured')}</Typography>
           <Typography style={styles.echoSecured} variant="h5">
             {translate('echo_secured_description')}
