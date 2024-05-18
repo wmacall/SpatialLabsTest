@@ -33,11 +33,13 @@ export const AddAccount = ({
   const [mediaSelected, setMediaSelected] = useState<SocialMediaData | null>(
     null,
   );
+  const [showDelete, setShowDelete] = useState(false);
   const dispatch = useAppDispatch();
 
   const handleReset = () => {
     setUsername('');
     setMediaSelected(null);
+    setShowDelete(false);
   };
   const handleClose = () => {
     onClose();
@@ -64,6 +66,7 @@ export const AddAccount = ({
     if (selectedMedia) {
       setMediaSelected(onFormatSocialNetworks(selectedMedia));
       setUsername(selectedMedia.username);
+      setShowDelete(true);
     }
   }, [selectedMedia]);
 
@@ -84,8 +87,8 @@ export const AddAccount = ({
               buttonColor="PRIMARY"
             />
           </View>
-          <View>
-            {mediaSelected ? (
+          <View style={styles.containerMedia}>
+            {showDelete ? (
               <TouchableOpacity
                 style={styles.containerRemove}
                 onPress={handleRemoveSocialMedia}>
@@ -105,62 +108,64 @@ export const AddAccount = ({
               )}
             </View>
           </View>
-          <Dropdown
-            placeholder={translate('select_a_platform')}
-            placeholderStyle={{color: COLORS.MONOCHROME_400}}
-            onChange={item => setMediaSelected(item)}
-            labelField="name"
-            valueField="name"
-            data={data}
-            value={mediaSelected?.name}
-            style={styles.dropdown}
-            renderLeftIcon={() =>
-              mediaSelected ? (
-                <View style={styles.containerLeftIcon}>
-                  <Icon name={mediaSelected.icon} />
+          <View style={styles.containerInformation}>
+            <Dropdown
+              placeholder={translate('select_a_platform')}
+              placeholderStyle={{color: COLORS.MONOCHROME_400}}
+              onChange={item => setMediaSelected(item)}
+              labelField="name"
+              valueField="name"
+              data={data}
+              value={mediaSelected?.name}
+              style={styles.dropdown}
+              renderLeftIcon={() =>
+                mediaSelected ? (
+                  <View style={styles.containerLeftIcon}>
+                    <Icon name={mediaSelected.icon} />
+                  </View>
+                ) : null
+              }
+              renderRightIcon={() => (
+                <View style={styles.containerIcon}>
+                  <Icon name="BackArrowIcon" />
                 </View>
-              ) : null
-            }
-            renderRightIcon={() => (
-              <View style={styles.containerIcon}>
-                <Icon name="BackArrowIcon" />
-              </View>
-            )}
-            renderItem={item => (
-              <View style={styles.rowDropdown}>
-                <Icon name={item.icon} />
-                <Typography style={styles.socialName} variant="h6">
-                  {item.name}
-                </Typography>
-              </View>
-            )}
-          />
-          <View style={styles.containerInput}>
-            <Typography variant="h6">@</Typography>
-            <Input
-              value={username}
-              onChangeText={setUsername}
-              style={styles.input}
-              maxLength={20}
-              placeholder={translate('username')}
+              )}
+              renderItem={item => (
+                <View style={styles.rowDropdown}>
+                  <Icon name={item.icon} />
+                  <Typography style={styles.socialName} variant="h6">
+                    {item.name}
+                  </Typography>
+                </View>
+              )}
             />
-          </View>
-          <View style={styles.containerButtons}>
-            <Button
-              onPress={handleReset}
-              variant="secondary"
-              textVariant="paragraph"
-              buttonColor="DARK_SECONDARY"
-              text={translate('cancel')}
-            />
-            <Button
-              isDisabled={!mediaSelected || username.length < 3}
-              variant="secondary"
-              textVariant="paragraph"
-              buttonColor="BLACK"
-              text={translate('save')}
-              onPress={handleSaveSocialMedia}
-            />
+            <View style={styles.containerInput}>
+              <Typography variant="h6">@</Typography>
+              <Input
+                value={username}
+                onChangeText={setUsername}
+                style={styles.input}
+                maxLength={20}
+                placeholder={translate('username')}
+              />
+            </View>
+            <View style={styles.containerButtons}>
+              <Button
+                onPress={handleReset}
+                variant="secondary"
+                textVariant="paragraph"
+                buttonColor="DARK_SECONDARY"
+                text={translate('cancel')}
+              />
+              <Button
+                isDisabled={!mediaSelected || username.length < 3}
+                variant="secondary"
+                textVariant="paragraph"
+                buttonColor="BLACK"
+                text={translate('save')}
+                onPress={handleSaveSocialMedia}
+              />
+            </View>
           </View>
         </View>
       </KeyboardAvoidingView>

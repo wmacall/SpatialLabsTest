@@ -8,7 +8,7 @@ export default StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: COLORS.BLACK_50,
   },
   containerModal: {
     backgroundColor: COLORS.PRIMARY,
@@ -112,5 +112,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     right: 0,
+    top: 0,
+  },
+  containerMedia: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  containerInformation: {
+    flex: 0.8,
   },
 });

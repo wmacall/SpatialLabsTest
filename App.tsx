@@ -4,6 +4,8 @@ import {SplashScreen} from './src/screens';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/store';
+import {LogBox} from 'react-native';
+LogBox.ignoreAllLogs();
 
 const App = () => (
   <Provider store={store}>

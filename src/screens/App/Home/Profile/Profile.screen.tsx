@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {
+  KeyboardAvoidingView,
+  ScrollView,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {
   AvatarProfile,
   Icon,
@@ -69,58 +74,63 @@ export const ProfileScreen = () => {
     );
   };
   return (
-    <View style={styles.container}>
-      <ImagePicker
-        isVisible={contextMenuVisible}
-        contextMenuPosition={contextMenuPosition}
-        onClose={() => setContextMenuVisible(false)}
-        setPhoto={handleUpdatePhoto}
-      />
-      <View style={styles.containerHeader}>
-        <TouchableOpacity
-          hitSlop={{
-            bottom: 20,
-            left: 20,
-            right: 20,
-            top: 20,
-          }}
-          onPress={goBack}
-          style={styles.buttonBack}>
-          <Icon name="BackArrowIcon" />
-        </TouchableOpacity>
-        <Typography variant="h4">{translate('profile')}</Typography>
-      </View>
-      <AvatarProfile
-        handlePressUpdatePhoto={handlePressUpdatePhoto}
-        photo={photo}
-      />
-      <Input
-        label={translate('username')}
-        value={user}
-        onChangeText={setUser}
-        onEndEditing={event =>
-          handleUpdateUserInformation('username', event.nativeEvent.text)
-        }
-      />
-      <Input
-        label={translate('name')}
-        value={name}
-        onChangeText={setName}
-        onEndEditing={event =>
-          handleUpdateUserInformation('name', event.nativeEvent.text)
-        }
-      />
-      <Input
-        label={translate('bio')}
-        style={styles.inputMultiline}
-        value={bio}
-        onChangeText={setBio}
-        multiline
-        showLimit
-        onEndEditing={event =>
-          handleUpdateUserInformation('bio', event.nativeEvent.text)
-        }
-      />
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+        style={styles.container}>
+        <ImagePicker
+          isVisible={contextMenuVisible}
+          contextMenuPosition={contextMenuPosition}
+          onClose={() => setContextMenuVisible(false)}
+          setPhoto={handleUpdatePhoto}
+        />
+        <View style={styles.containerHeader}>
+          <TouchableOpacity
+            hitSlop={{
+              bottom: 20,
+              left: 20,
+              right: 20,
+              top: 20,
+            }}
+            onPress={goBack}
+            style={styles.buttonBack}>
+            <Icon name="BackArrowIcon" />
+          </TouchableOpacity>
+          <Typography variant="h4">{translate('profile')}</Typography>
+        </View>
+        <AvatarProfile
+          handlePressUpdatePhoto={handlePressUpdatePhoto}
+          photo={photo}
+        />
+        <Input
+          label={translate('username')}
+          value={user}
+          onChangeText={setUser}
+          onEndEditing={event =>
+            handleUpdateUserInformation('username', event.nativeEvent.text)
+          }
+        />
+        <Input
+          label={translate('name')}
+          value={name}
+          onChangeText={setName}
+          onEndEditing={event =>
+            handleUpdateUserInformation('name', event.nativeEvent.text)
+          }
+        />
+        <Input
+          label={translate('bio')}
+          style={styles.inputMultiline}
+          value={bio}
+          onChangeText={setBio}
+          multiline
+          showLimit
+          onEndEditing={event =>
+            handleUpdateUserInformation('bio', event.nativeEvent.text)
+          }
+        />
+      </ScrollView>
       <View
         style={[
           styles.containerButtonSignOut,
@@ -136,6 +146,6 @@ export const ProfileScreen = () => {
           <Icon name="LogoutIcon" />
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
