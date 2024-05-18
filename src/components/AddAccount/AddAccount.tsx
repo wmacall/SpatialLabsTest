@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   KeyboardAvoidingView,
   Modal,
@@ -11,20 +11,37 @@ import {Input} from '../Input';
 import {translate} from '../../i18n';
 import {Button} from '../Button';
 import {Dropdown} from 'react-native-element-dropdown';
-import {Icon} from '../Icon';
+import {Icon, IconName} from '../Icon';
 import {formatSocialNetworks} from '../../utils';
 import {COLORS, SOCIAL_MEDIA, SocialMediaData} from '../../constants';
 import {useAppDispatch} from '../../hooks';
-import {onAddSocialMedia} from '../../store';
+import {SocialMedia, onAddSocialMedia} from '../../store';
 const data = formatSocialNetworks(SOCIAL_MEDIA);
 
 interface AddAccountProps {
   isVisible: boolean;
   onClose: () => void;
+  selectedMedia: SocialMedia | null;
 }
 
-export const AddAccount = ({isVisible, onClose}: AddAccountProps) => {
-  const [username, setUsername] = useState('');
+const onFormatSocialNetworks = (
+  socialMedia: SocialMedia | null,
+): SocialMediaData | null => {
+  if (socialMedia) {
+    return {
+      icon: socialMedia.icon as IconName,
+      name: socialMedia.name,
+    };
+  }
+  return null;
+};
+
+export const AddAccount = ({
+  isVisible,
+  onClose,
+  selectedMedia = null,
+}: AddAccountProps) => {
+  const [username, setUsername] = useState(selectedMedia?.username || '');
   const [mediaSelected, setMediaSelected] = useState<SocialMediaData | null>(
     null,
   );
@@ -51,6 +68,13 @@ export const AddAccount = ({isVisible, onClose}: AddAccountProps) => {
       handleClose();
     }
   };
+
+  useEffect(() => {
+    if (selectedMedia) {
+      setMediaSelected(onFormatSocialNetworks(selectedMedia));
+      setUsername(selectedMedia.username);
+    }
+  }, [selectedMedia]);
 
   return (
     <Modal visible={isVisible} transparent animationType="slide">
@@ -128,7 +152,7 @@ export const AddAccount = ({isVisible, onClose}: AddAccountProps) => {
               text={translate('cancel')}
             />
             <Button
-              isDisabled={!mediaSelected || !username}
+              isDisabled={!mediaSelected || username.length < 3}
               variant="secondary"
               textVariant="paragraph"
               buttonColor="BLACK"

@@ -7,15 +7,18 @@ import styles from './AccountCard.styles';
 
 interface AccountCardProps extends SocialMedia {
   isOdd?: boolean;
+  onPress: () => void;
 }
 
 export const AccountCard = ({
   icon,
   username,
   isOdd = false,
+  onPress,
 }: AccountCardProps) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       activeOpacity={0.6}
       style={[styles.container, isOdd && styles.containerOdd]}>
       <Icon name={icon as IconName} />

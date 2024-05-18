@@ -8,7 +8,7 @@ import {
   Typography,
 } from '../../../components';
 import {useSelector} from 'react-redux';
-import {getProfileSelector, getSocialMedia} from '../../../store';
+import {SocialMedia, getProfileSelector, getSocialMedia} from '../../../store';
 import DotBlack from '../../../assets/img/dot_black.png';
 import styles from './Home.screen.styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -23,14 +23,23 @@ export const HomeScreen = () => {
   const {bottom} = useSafeAreaInsets();
   const {navigate} = useNavigation<NativeStackNavigationProp<AppStackRouter>>();
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState<SocialMedia | null>(null);
 
   const handleNavigateToProfile = () => {
     navigate(AppStackRoutes.PROFILE);
   };
+  const handleSelectSocialMedia = (media: SocialMedia) => {
+    setSelectedMedia(media);
+    setIsVisible(true);
+  };
 
   return (
     <View style={styles.container}>
-      <AddAccount isVisible={isVisible} onClose={() => setIsVisible(false)} />
+      <AddAccount
+        selectedMedia={selectedMedia}
+        isVisible={isVisible}
+        onClose={() => setIsVisible(false)}
+      />
       <View style={styles.containerHeader}>
         <View style={styles.row}>
           <TouchableOpacity
@@ -61,7 +70,11 @@ export const HomeScreen = () => {
         data={socialMedia}
         keyExtractor={(item, index) => `${item.name}-${index}`}
         renderItem={({item, index}) => (
-          <AccountCard isOdd={index % 2 === 0} {...item} />
+          <AccountCard
+            onPress={() => handleSelectSocialMedia(item)}
+            isOdd={index % 2 === 0}
+            {...item}
+          />
         )}
       />
       <View
