@@ -11,11 +11,11 @@ import {Input} from '../Input';
 import {translate} from '../../i18n';
 import {Button} from '../Button';
 import {Dropdown} from 'react-native-element-dropdown';
-import {Icon, IconName} from '../Icon';
-import {formatSocialNetworks} from '../../utils';
+import {Icon} from '../Icon';
+import {formatSocialNetworks, onFormatSocialNetworks} from '../../utils';
 import {COLORS, SOCIAL_MEDIA, SocialMediaData} from '../../constants';
 import {useAppDispatch} from '../../hooks';
-import {SocialMedia, onAddSocialMedia} from '../../store';
+import {SocialMedia, onAddSocialMedia, onRemoveSocialMedia} from '../../store';
 const data = formatSocialNetworks(SOCIAL_MEDIA);
 
 interface AddAccountProps {
@@ -23,18 +23,6 @@ interface AddAccountProps {
   onClose: () => void;
   selectedMedia: SocialMedia | null;
 }
-
-const onFormatSocialNetworks = (
-  socialMedia: SocialMedia | null,
-): SocialMediaData | null => {
-  if (socialMedia) {
-    return {
-      icon: socialMedia.icon as IconName,
-      name: socialMedia.name,
-    };
-  }
-  return null;
-};
 
 export const AddAccount = ({
   isVisible,
@@ -55,7 +43,6 @@ export const AddAccount = ({
     onClose();
     handleReset();
   };
-
   const handleSaveSocialMedia = () => {
     if (mediaSelected && username) {
       dispatch(
@@ -67,6 +54,10 @@ export const AddAccount = ({
       );
       handleClose();
     }
+  };
+  const handleRemoveSocialMedia = () => {
+    dispatch(onRemoveSocialMedia(mediaSelected?.name || ''));
+    handleClose();
   };
 
   useEffect(() => {
@@ -93,15 +84,26 @@ export const AddAccount = ({
               buttonColor="PRIMARY"
             />
           </View>
-          <View style={styles.containerEmpty}>
-            <View style={styles.logo}>
-              {mediaSelected ? <Icon name={mediaSelected.icon} /> : null}
+          <View>
+            {mediaSelected ? (
+              <TouchableOpacity
+                style={styles.containerRemove}
+                onPress={handleRemoveSocialMedia}>
+                <Typography variant="h6" textColor="RED">
+                  {translate('delete')}
+                </Typography>
+              </TouchableOpacity>
+            ) : null}
+            <View style={styles.containerEmpty}>
+              <View style={styles.logo}>
+                {mediaSelected ? <Icon name={mediaSelected.icon} /> : null}
+              </View>
+              {username ? (
+                <Typography variant="paragraph">@f{username}</Typography>
+              ) : (
+                <View style={styles.username} />
+              )}
             </View>
-            {username ? (
-              <Typography variant="paragraph">@f{username}</Typography>
-            ) : (
-              <View style={styles.username} />
-            )}
           </View>
           <Dropdown
             placeholder={translate('select_a_platform')}

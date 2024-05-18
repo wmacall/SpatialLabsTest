@@ -103,4 +103,14 @@ export default StyleSheet.create({
   containerLeftIcon: {
     marginRight: theme.scaleWidth(16),
   },
+  containerRemove: {
+    backgroundColor: COLORS.DARK_SECONDARY,
+    width: theme.scaleWidth(129),
+    height: theme.scaleHeight(48),
+    borderRadius: theme.scaleWidth(24),
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    right: 0,
+  },
 });
