@@ -12,6 +12,15 @@ export default StyleSheet.create({
     position: 'absolute',
     width: '100%',
     alignSelf: 'center',
-    bottom: 0,
+    bottom: theme.scaleHeight(24),
+    backgroundColor: COLORS.PRIMARY,
+    paddingTop: theme.scaleHeight(20),
+  },
+  contentContainerStyle: {
+    paddingBottom: theme.scaleHeight(100),
+  },
+  description: {
+    marginTop: theme.scaleHeight(8),
+    marginBottom: theme.scaleHeight(32),
   },
 });

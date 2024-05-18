@@ -1,5 +1,5 @@
-import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {TouchableOpacity, View} from 'react-native';
 import {Typography} from '../Typography';
 import {Icon} from '../Icon';
 import styles from './SectionHeader.styles';
@@ -10,13 +10,20 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({title, handleToggle}: SectionHeaderProps) => {
+  const [rotate, setRotate] = useState(false);
+  const onToggle = () => {
+    setRotate(prev => !prev);
+    handleToggle(title);
+  };
   return (
     <TouchableOpacity
       style={styles.container}
       activeOpacity={0.6}
-      onPress={() => handleToggle(title)}>
+      onPress={onToggle}>
       <Typography variant="h5">{title}</Typography>
-      <Icon name="BackArrowIcon" />
+      <View style={rotate ? styles.arrow : styles.arrowDefault}>
+        <Icon name="BackArrowIcon" />
+      </View>
     </TouchableOpacity>
   );
 };

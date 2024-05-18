@@ -8,7 +8,11 @@ import {SectionHeader} from '../SectionHeader';
 import {translate} from '../../i18n';
 import styles from './AccountSelection.styles';
 import {useSelector} from 'react-redux';
-import {getSocialMedia, onFinishOnboarding} from '../../store';
+import {
+  getProfileSelector,
+  getSocialMedia,
+  onFinishOnboarding,
+} from '../../store';
 import {useAppDispatch} from '../../hooks';
 
 interface AccountSelectionProps {
@@ -20,6 +24,7 @@ export const AccountSelection = ({handleBackStep}: AccountSelectionProps) => {
     new Set(SOCIAL_MEDIA.map(({title}) => title)),
   );
   const socialMedia = useSelector(getSocialMedia);
+  const {name} = useSelector(getProfileSelector);
   const dispatch = useAppDispatch();
 
   const handleToggle = (title: string) => {
@@ -45,13 +50,16 @@ export const AccountSelection = ({handleBackStep}: AccountSelectionProps) => {
         buttonColor="DARK_SECONDARY"
         onPress={handleBackStep}
       />
-      <Typography>{translate('welcome_name', {name: 'John Doe'})}</Typography>
-      <Typography variant="h5">{translate('welcome_description')}</Typography>
+      <Typography>{translate('welcome_name', {name})}</Typography>
+      <Typography style={styles.description} variant="h5">
+        {translate('welcome_description')}
+      </Typography>
       <SectionList
         showsVerticalScrollIndicator={false}
         bounces={false}
         sections={SOCIAL_MEDIA}
         extraData={expandedSections}
+        contentContainerStyle={styles.contentContainerStyle}
         renderItem={({section: {title}, item}) => {
           const isExpanded = expandedSections.has(title);
           if (!isExpanded) {

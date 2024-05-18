@@ -102,7 +102,7 @@ export const AddAccount = ({
                 {mediaSelected ? <Icon name={mediaSelected.icon} /> : null}
               </View>
               {username ? (
-                <Typography variant="paragraph">@f{username}</Typography>
+                <Typography variant="paragraph">@{username}</Typography>
               ) : (
                 <View style={styles.username} />
               )}
