@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {FlatList, Image, TouchableOpacity, View} from 'react-native';
 import {
   AccountCard,
@@ -22,6 +22,7 @@ export const HomeScreen = () => {
   const {username, bio, photo} = useSelector(getProfileSelector);
   const {bottom} = useSafeAreaInsets();
   const {navigate} = useNavigation<NativeStackNavigationProp<AppStackRouter>>();
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleNavigateToProfile = () => {
     navigate(AppStackRoutes.PROFILE);
@@ -29,7 +30,7 @@ export const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <AddAccount />
+      <AddAccount isVisible={isVisible} onClose={() => setIsVisible(false)} />
       <View style={styles.containerHeader}>
         <View style={styles.row}>
           <TouchableOpacity
@@ -68,7 +69,12 @@ export const HomeScreen = () => {
           styles.containerButton,
           {bottom: bottom + theme.scaleHeight(27)},
         ]}>
-        <Button icon="AddIcon" buttonColor="GREEN" variant="rounded" />
+        <Button
+          onPress={() => setIsVisible(true)}
+          icon="AddIcon"
+          buttonColor="GREEN"
+          variant="rounded"
+        />
       </View>
     </View>
   );

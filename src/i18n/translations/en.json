@@ -29,5 +29,6 @@
   "save": "Save",
   "delete": "Delete",
   "sign_out": "Sign Out",
-  "profile": "Profile"
+  "profile": "Profile",
+  "select_a_platform": "Select a Platform"
 }

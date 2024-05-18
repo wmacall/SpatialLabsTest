@@ -10,4 +10,5 @@ export const COLORS = {
   BLACK_50: 'rgba(21, 21, 21, 0.5)',
   WHITE: '#FFFFFF',
   MONOCHROME_400: '#8B8B8B',
+  TERTIARY: '#CFCFCF',
 };
